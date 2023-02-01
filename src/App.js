@@ -19,7 +19,7 @@ const App = () => {
             setCounter(counter - 1);
           }}
         >
-          -
+          {counter === 0 && <button></button>}-
         </button>
         <div className="button">
           <p>{counter}</p>
