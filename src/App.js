@@ -1,25 +1,50 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { useState } from "react";
+//import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import logo from "./calculator.png";
 
-function App() {
+const App = () => {
+  const [counter, setCounter] = useState(0);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <div>
+      <header>
+        <img className="logo" src={logo} alt="logo" />
+        <h1>React Counter</h1>
       </header>
+      <main>
+        <button
+          className="utils"
+          onClick={() => {
+            setCounter(counter - 1);
+          }}
+        >
+          -
+        </button>
+        <div className="button">
+          <p>{counter}</p>
+        </div>
+
+        <button
+          className="utils"
+          onClick={() => {
+            setCounter(counter + 1);
+          }}
+        >
+          +
+        </button>
+
+        <button
+          className="reset"
+          onClick={() => {
+            setCounter(0);
+          }}
+        >
+          Reset
+        </button>
+      </main>
     </div>
   );
-}
+};
 
 export default App;
