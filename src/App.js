@@ -19,7 +19,7 @@ const App = () => {
             setCounter(counter - 1);
           }}
         >
-          {counter === 0 && <button></button>}-
+          {counter === 0 && <button className="utils"></button>}-
         </button>
         <div className="button">
           <p>{counter}</p>
@@ -33,15 +33,16 @@ const App = () => {
         >
           +
         </button>
-
-        <button
-          className="reset"
-          onClick={() => {
-            setCounter(0);
-          }}
-        >
-          Reset
-        </button>
+        <div>
+          <button
+            className="reset"
+            onClick={() => {
+              setCounter(0);
+            }}
+          >
+            Reset
+          </button>
+        </div>
       </main>
     </div>
   );
